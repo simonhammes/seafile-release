@@ -19,6 +19,10 @@ services:
       - SEAHUB__CACHE_BACKEND=redis
       - SEAHUB__CACHE_HOST=redis
       - SEAHUB__CACHE_PORT=6379
+      # Test: https://manual.seafile.com/config/seafile-conf/#cache-pro-edition-only
+      - SEAFILE__redis__redis_server=redis
+      - SEAFILE__redis__redis_port=6379
+      - SEAFILE__redis__max_connections=100
     labels:
       caddy: ${SEAFILE_SERVER_HOSTNAME}
       caddy.reverse_proxy: "{{upstreams 80}}"
