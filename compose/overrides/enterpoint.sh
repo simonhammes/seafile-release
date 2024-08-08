@@ -10,6 +10,8 @@ function log() {
     echo "[$time] $1 " &>> /opt/seafile/logs/enterpoint.log
 }
 
+# Install redis module
+pip install redis
 
 # check nginx
 while [ 1 ]; do
