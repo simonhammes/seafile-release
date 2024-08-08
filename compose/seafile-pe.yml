@@ -76,10 +76,10 @@ services:
       start_period: 30s
       timeout: 10s
 
-    redis:
-      image: redis:latest
-      networks:
-        - backend-seafile-net
+  redis:
+    image: redis:latest
+    networks:
+      - backend-seafile-net
 
   memcached:
     image: ${MEMCACHED_IMAGE:-memcached:1.6.27-bookworm}
